@@ -11,7 +11,7 @@
                     <br>
                     <form action="">
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="movie name">
+                            <input type="text" v-model="moviename" class="form-control" placeholder="movie name">
                         </div>
                         <br>
                         <div class="form-group d-flex justify-content-center">
@@ -28,16 +28,17 @@
 <script>
 import LoaderComponent from '../components/LoadingComponent'
 import { setTimeout } from 'timers';
-
 export default {
     components: { LoaderComponent },
     data() {
         return {
             isLoggingIn: false,
-            isAlertShow: false
+            isAlertShow: false,
+            moviename : null
         }
     },
     methods: {
+
         login() {
             this.isLoggingIn = true
             setTimeout(() => {
@@ -48,7 +49,7 @@ export default {
         },
 
         redirect() {
-            this.$router.push({name: 'Movies'})
+            this.$router.push({name: 'Movies',params: { moviename: this.moviename }})
         }
     }
 }
