@@ -1,21 +1,8 @@
 <template>
   <div>
       <h1>{{movie}}</h1>
-      <!-- <div class="card-body">{{info}}</div> -->
-      <!-- <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-auto">
-              <table class="table table-striped table-responsive">
-                  <tr v-for="movie in this.info.data" :key="movie"
-                      class="bg-gray-100">
-                    <td class="p-1">
-                          {{movie}}
-                    </td>
-                  </tr>
-              </table>
-          </div>
-        </div>
-      </div> -->
+      <br>
+      <br>
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-auto">
