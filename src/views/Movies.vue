@@ -48,8 +48,8 @@ export default {
   },
   mounted () {
     axios
-      // .get(this.baseurl + this.movie)
-      .get('http://localhost:8000/john%20wick')
+      .get(this.baseurl + this.movie)
+      //.get('http://localhost:8000/john%20wick')
       .then(response => (this.info = response))
   },
   methods: {
