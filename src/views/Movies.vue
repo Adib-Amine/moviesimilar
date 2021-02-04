@@ -23,8 +23,8 @@ export default {
   data(){
     return {
       movie : "null",
-       baseurl : "https://moviesimilarapi.herokuapp.com/",
-      //baseurl : "http://localhost:8000/",
+      baseurl : "https://moviesimilarapi.herokuapp.com/similar_movies/",
+      // baseurl : "http://localhost:8000/",
       totalVuePackages : null,
       info : null,
       data : null

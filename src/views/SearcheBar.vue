@@ -2,7 +2,7 @@
     <section class="container-fluid">
         <div class="row justify-content-center">
             <div class="col-lg-4">
-                <div class="login-panel bg-white text-left">
+                <div class="searche-panel bg-white text-left">
                     <div class="alert alert-primary" role="alert" :style="{opacity: isAlertShow ? 1 : 0}">
                         <small>waiting for result.</small>
                         <loader-component width="30"></loader-component>
@@ -15,8 +15,8 @@
                         </div>
                         <br>
                         <div class="form-group d-flex justify-content-center">
-                            <button class="btn btn-primary w-25" id="login" @click.prevent="login" v-if="!isLoggingIn">Searche</button>
-                            <button class="btn btn-primary w-25" disabled @click.prevent="login" v-if="isLoggingIn"><loader-component width="30"></loader-component></button>
+                            <button class="btn btn-primary w-25" id="searche" @click.prevent="searche" v-if="!isSearchingIn">Searche</button>
+                            <button class="btn btn-primary w-25" disabled @click.prevent="searche" v-if="isSearchingIn"><loader-component width="30"></loader-component></button>
                         </div>
                     </form>
                 </div>
@@ -32,19 +32,19 @@ export default {
     components: { LoaderComponent },
     data() {
         return {
-            isLoggingIn: false,
+            isSearchingIn: false,
             isAlertShow: false,
             moviename : null
         }
     },
     methods: {
 
-        login() {
-            this.isLoggingIn = true
+        searche() {
+            this.isSearchingIn = true
             setTimeout(() => {
-                this.isLoggingIn = false
+                this.isSearchingIn = false
                 this.isAlertShow = true
-                setTimeout(() => this.redirect(), 500)
+                setTimeout(() => this.redirect(), 1000)
             }, 500)
         },
 
@@ -60,7 +60,7 @@ export default {
     margin: 0;
     height: unset;
 }
-.login-panel {
+.searche-panel {
     position: relative;
     padding: 100px 0;
     .alert {
